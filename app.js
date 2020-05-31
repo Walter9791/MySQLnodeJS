@@ -5,7 +5,6 @@ const dotenv = require('dotenv');
 const path = require ('path');
 const cookieParser = require ('cookie-parser');
 
-
 dotenv.config({path:'./.env'});
 
 //connects to MySQL, contents hidden in .env
@@ -23,6 +22,7 @@ app.use(express.static(publicDirectory));
 //parse URL encoded bodies sent by HTML forms, second parse JSON bodies sent by API
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(cookieParser());
 
 
 //view engine
